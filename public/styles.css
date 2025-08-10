@@ -1,4 +1,3 @@
-/* General body styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -6,9 +5,8 @@ body {
     padding: 0;
 }
 
-/* Container */
 .Box {
-    max-width: 500px;
+    max-width: 600px;
     margin: 30px auto;
     padding: 20px;
     background-color: white;
@@ -16,7 +14,6 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading */
 .Box h1 {
     text-align: center;
     font-size: 28px;
@@ -24,41 +21,73 @@ body {
     margin-bottom: 20px;
 }
 
-/* Task items */
-.Box p {
-    padding: 10px;
-    background-color: #e6f0ff;
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: #f5faff;
     border: 1px solid #cce0ff;
-    margin: 8px 0;
     border-radius: 6px;
-    font-size: 16px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
-/* Form elements */
+.task-item span {
+    flex: 1;
+}
+
+.High {
+    border-left: 6px solid red;
+}
+.Medium {
+    border-left: 6px solid orange;
+}
+.Low {
+    border-left: 6px solid green;
+}
+
 form {
     display: flex;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 6px;
 }
 
-input[type="text"] {
-    flex: 1;
-    padding: 10px;
+form input[type="text"], select {
+    padding: 8px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 8px 14px;
     background-color: #3399ff;
     border: none;
     color: white;
     border-radius: 6px;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
 }
 
 button:hover {
     background-color: #007acc;
+}
+
+.add-form {
+    margin-top: 20px;
+}
+
+
+@media (max-width: 500px) {
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    form {
+        flex-direction: column;
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
 }
